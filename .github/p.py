@@ -47,6 +47,9 @@ for i in range(4):
             elif str(num).zfill(4) + ".l" in file_list:
                 draw.rectangle((x+1, y+1, x+cell_width-1, y+cell_height-1), fill=(0, 153, 0))
                 draw.text((x+2, y+2), str(num), font=font, fill=(255, 255, 255))
+            elif str(num).zfill(4) + ".l" in os.listdir("../skt"):
+                draw.rectangle((x+1, y+1, x+cell_width-1, y+cell_height-1), fill=(255, 0, 0))
+                draw.text((x+2, y+2), str(num), font=font, fill=(0, 0, 0))
             else:
                 draw.text((x+2, y+2), str(num), font=font, fill=(0, 0, 0))
 
