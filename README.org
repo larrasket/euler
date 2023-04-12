@@ -16,6 +16,4 @@ people to publish their solutions online too. For leetcode solutions see [[https
 
 You may find this an interesting reading: [[https://salehmu.github.io/posts/prelude.html][A Prelude Over Mathematics]].
 
-[[file:.github/progress.png]]
-
-
+[[file:src/p.png]]
