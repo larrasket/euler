@@ -5,7 +5,7 @@
 
 These are my solutions for [[https://projecteuler.net/][Project Euler]] problems. I do not agree to follow
 Project Euler's policy regarding not publishing solutions, I encourage other
-people to publish their solutions online too. For leetcode solutions see [[https://github.com/salehmu/ps][/ps]]
+people to publish their solutions online too. For leetcode solutions see [[https://github.com/larrasket/ps][/ps]]
 
 
 
@@ -14,6 +14,6 @@ people to publish their solutions online too. For leetcode solutions see [[https
 /(The following progress bar is generated automatically using [[file:.github/p.py][this]] dummy python script and updated with every new commit using even more dummy git-hook. Skipped/missing problems are highlighted with yellow. Failed problems are marked with red. Non-solved problems are not highlighted. It only contains the first 400 problems for now, hopefully one day I will need to scratch this.)/
 
 
-You may find this an interesting reading: [[https://salehmu.github.io/posts/prelude.html][A Prelude Over Mathematics]].
+You may find this an interesting reading: [[https://larrasket.github.io/posts/prelude.html][A Prelude Over Mathematics]].
 
 [[file:src/p.png]]
