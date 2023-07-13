@@ -44,7 +44,7 @@ for i in range(4):
             if num in missing_files:
                 draw.rectangle((x+1, y+1, x+cell_width-1, y+cell_height-1), fill=(221, 221, 51))
                 draw.text((x+2, y+2), str(num), font=font, fill=(0, 0, 0))
-            elif str(num).zfill(4) + ".l" in file_list:
+            elif str(num).zfill(4) + ".l" in file_list or str(num).zfill(4) + ".jl" in file_list:
                 draw.rectangle((x+1, y+1, x+cell_width-1, y+cell_height-1), fill=(0, 153, 0))
                 draw.text((x+2, y+2), str(num), font=font, fill=(255, 255, 255))
             else:
