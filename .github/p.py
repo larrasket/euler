@@ -16,7 +16,8 @@ image_height = (num_rows * cell_height) * 4 + (table_margin * 2) + (table_spacin
 image = Image.new("RGB", (image_width, image_height), (253, 253, 253))
 draw = ImageDraw.Draw(image)
 
-file_list = sorted([f for f in os.listdir("../src") if not f.endswith('.png')])
+file_list = sorted([f for f in os.listdir("../src") if not (f.endswith('.png') or
+                                                            f.endswith('.mod'))])
 
 prev_num = None
 missing_files = []
@@ -59,9 +60,8 @@ for i in range(4):
                        fill=(255, 255, 255))
 
 # mark files in ../skt with red
-# mark files in ../skt with red
 for filename in os.listdir("../skt"):
-    if filename.endswith(".l"):
+    if filename.endswith(".l") or filename.endswith(".go"):
         num = int(filename.split(".")[0])
         if num <= num_cols * num_rows * 4:
             x_offset = table_margin + ((num-1) % num_cols) * cell_width
