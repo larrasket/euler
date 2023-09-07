@@ -1,11 +1,9 @@
 #+TITLE: Euler.
-
-
-#+HTML: <img src=".github/eu.png" align="right">
+#+OPTIONS: toc:nil
 
 These are my solutions for [[https://projecteuler.net/][Project Euler]] problems. I do not agree to follow
 Project Euler's policy regarding not publishing solutions, I encourage other
-people to publish their solutions online too. For leetcode solutions see [[https://github.com/larrasket/ps][/ps]]
+people to publish their solutions online too. For leetcode solutions see [[https://git.sr.ht/~lr0/ps][/ps]]
 
 
 
