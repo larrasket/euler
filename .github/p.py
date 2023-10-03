@@ -45,7 +45,7 @@ for i in range(4):
             if num in missing_files:
                 draw.rectangle((x+1, y+1, x+cell_width-1, y+cell_height-1), fill=(221, 221, 51))
                 draw.text((x+2, y+2), str(num), font=font, fill=(0, 0, 0))
-            elif str(num).zfill(4) + ".l" in file_list or str(num).zfill(4) + ".jl" in file_list:
+            elif str(num).zfill(4) + ".l" in file_list or str(num).zfill(4) + ".jl" in file_list or str(num).zfill(4) + ".c" in file_list:
                 draw.rectangle((x+1, y+1, x+cell_width-1, y+cell_height-1), fill=(0, 153, 0))
                 draw.text((x+2, y+2), str(num), font=font, fill=(255, 255, 255))
             else:
@@ -61,7 +61,7 @@ for i in range(4):
 
 # mark files in ../skt with red
 for filename in os.listdir("../skt"):
-    if filename.endswith(".l") or filename.endswith(".go"):
+    if filename.endswith(".l") or filename.endswith(".go") or filename.endswith(".c"):
         num = int(filename.split(".")[0])
         if num <= num_cols * num_rows * 4:
             x_offset = table_margin + ((num-1) % num_cols) * cell_width
