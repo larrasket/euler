@@ -54,3 +54,45 @@ function divisors_memoized(n)
     divisors = _divisors(n)
     filter(x -> x != n, divisors)
 end
+
+
+
+function getLovelyNumbers(L)
+    all_sums = Dict{Int, Int}()
+    lovely = []
+    for i = 1 : L
+        all_sums[i] = sum(divisors_memoized(i))
+    end
+    all_sums[0] = 0
+    for (key, value) in pairs(all_sums)
+        v = all_sums[key];
+        if v < L && key != value && all_sums[v] == key
+            push!(lovely, (v, key))
+        end
+
+    end
+    return lovely
+end
+
+function make_name_loveley(input_str::String,
+                          lovely_stuff)
+    result = []
+    for char in input_str
+        if isletter(char)
+            index = Int(lowercase(char)) - 96
+            if 1 <= index <= length(lovely_stuff)
+                append!(result, lovely_stuff[index])
+            end
+        end
+    end
+
+    return result
+end
+
+
+# NERMEEN = "Nermeen"
+# map(x-> x[1]%2 == 0 ? ( x[2], NERMEEN[trunc(Int, x[1]/2)] ) : x[2] , enumerate(
+#     make_name_loveley(NERMEEN, getLovelyNumbers(90000))))
+
+
+# sum(make_name_loveley("Salih", getLovelyNumbers(90000)))
