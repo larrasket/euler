@@ -55,6 +55,17 @@ function divisors_memoized(n)
     filter(x -> x != n, divisors)
 end
 
+function GetAbundant(L)
+    all_sums = Dict{Int, Int}()
+    for i = 1 : L
+        s = sum(divisors_memoized(i))
+        if s > i
+            all_sums[i] = s
+        end
+    end
+    return all_sums
+end
+
 
 
 function getLovelyNumbers(L)
@@ -90,9 +101,8 @@ function make_name_loveley(input_str::String,
 end
 
 
-# NERMEEN = "Nermeen"
+# NERMEEN = "Siham"
 # map(x-> x[1]%2 == 0 ? ( x[2], NERMEEN[trunc(Int, x[1]/2)] ) : x[2] , enumerate(
 #     make_name_loveley(NERMEEN, getLovelyNumbers(90000))))
 
-
-# sum(make_name_loveley("Salih", getLovelyNumbers(90000)))
+# sum(make_name_loveley(NERMEEN, getLovelyNumbers(90000)))
