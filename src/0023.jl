@@ -1,4 +1,3 @@
-using Base: number_from_hex
 include("../ut.jl")
 
 function solve()

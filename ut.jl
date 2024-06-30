@@ -1,4 +1,4 @@
-
+using Base: number_from_hex
 const factor_count_cache = Dict{Int, Int}()
 
 """
@@ -100,6 +100,32 @@ function make_name_loveley(input_str::String,
     return result
 end
 
+function get_numbers_after_period(x::Float64; precision::Int=256)
+    setprecision(precision) do
+        big_x = BigFloat(x)
+        str = string(big_x)
+        parts = split(str, ".")
+        return length(parts) > 1 ? parts[2] : ""
+    end
+end
+
+function find_longest_repeating_substring(s::String)
+    n = length(s)
+    longest_repeating = ""
+
+    for len in 1:n-1
+        for i in 1:n-len
+            substring = s[i:i+len-1]
+            if occursin(substring, s[i+len:end])
+                if length(substring) > length(longest_repeating)
+                    longest_repeating = substring
+                end
+            end
+        end
+    end
+
+    return longest_repeating
+end
 
 # NERMEEN = "Siham"
 # map(x-> x[1]%2 == 0 ? ( x[2], NERMEEN[trunc(Int, x[1]/2)] ) : x[2] , enumerate(
