@@ -1,9 +1,7 @@
 using Base: number_from_hex
-const factor_count_cache = Dict{Int, Int}()
 
-"""
-Returns the devisors of a number.
-"""
+# see https://stackoverflow.com/a/2844920
+const factor_count_cache = Dict{Int, Int}()
 function count_factors_memoized(initial_n)
     if haskey(factor_count_cache, initial_n)
         return factor_count_cache[initial_n]
@@ -29,7 +27,7 @@ function count_factors_memoized(initial_n)
     return num_factors
 end
 
-memo = Dict{Int, Vector{Int}}()
+const memo = Dict{Int, Vector{Int}}()
 function divisors_memoized(n)
 
     function _divisors(k)
@@ -126,6 +124,30 @@ function find_longest_repeating_substring(s::String)
 
     return longest_repeating
 end
+
+function sieve_of_eratosthenes(limit)
+    is_prime = trues(limit)
+    is_prime[1] = false  # 1 is not a prime number
+
+    for i in 2:sqrt(limit)
+        if is_prime[i]
+            for j in i^2:i:limit
+                is_prime[j] = false
+            end
+        end
+    end
+
+    primes = []
+    for i in 2:limit
+        if is_prime[i]
+            push!(primes, i)
+        end
+    end
+
+    return primes
+end
+
+
 
 # NERMEEN = "Siham"
 # map(x-> x[1]%2 == 0 ? ( x[2], NERMEEN[trunc(Int, x[1]/2)] ) : x[2] , enumerate(
