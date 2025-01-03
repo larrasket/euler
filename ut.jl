@@ -147,7 +147,9 @@ function sieve_of_eratosthenes(limit)
     return primes
 end
 
-
+function number_to_array(num::Integer)
+    return [parse(Int, d) for d in string(abs(num))]
+end
 
 # NERMEEN = "Siham"
 # map(x-> x[1]%2 == 0 ? ( x[2], NERMEEN[trunc(Int, x[1]/2)] ) : x[2] , enumerate(
